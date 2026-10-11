@@ -13,8 +13,9 @@ class_name ActiveItem
 
 @export_category("Specials")
 @export var Chance:int = 100
-@export var Effect:int
-@export var damage:int = 0
+## 1 = stunned, 2 = Concussed, 3 = Bleeding, 4 = Flamed
+@export var Effect:int = 0
+@export var SecondaryDamage:int = 0
 
 @export_category("Sprites")
 @export var Sprite:CompressedTexture2D

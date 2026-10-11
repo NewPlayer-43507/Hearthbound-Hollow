@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Enemy" load_steps=3 format=3 uid="uid://bjulqkgbxainq"]
+
+[ext_resource type="SpriteFrames" uid="uid://claiuhevsc7cb" path="res://Sprite/Enemy/SpriteFrames/Runner.tres" id="1_ag41c"]
+[ext_resource type="Script" uid="uid://ch8227gk3v0ot" path="res://Resources/Enemies/Enemy.gd" id="1_hgmc5"]
+
+[resource]
+script = ExtResource("1_hgmc5")
+Name = "Runner"
+SpriteSheet = ExtResource("1_ag41c")
+metadata/_custom_type_script = "uid://ch8227gk3v0ot"

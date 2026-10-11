@@ -12,7 +12,7 @@ class_name Character
 @export_category("Stats")
 @export var Health:int = 3
 @export var ResistToKnockback:int = 2
-@export var MainWeapon:int
+@export var MainWeapon:ActiveItem
 @export var Speed:int = 5
 @export var SpecialAbility:int
 @export var Strength:int = 4

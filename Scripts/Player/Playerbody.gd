@@ -1,0 +1,34 @@
+extends CharacterBody2D
+
+@onready var Anim = $PlayerSprite
+
+var Lastdir:Vector2 = Vector2(1,0)
+
+func Animate():
+	move_and_slide()
+
+	if velocity.x != 0:
+		Anim.play("right_walk")
+		if velocity.x > 0:
+			Anim.flip_h = false
+			Lastdir = Vector2(1,0)
+		elif velocity.x < 0:
+			Anim.flip_h = true
+			Lastdir = Vector2(-1,0)
+	elif velocity.y != 0:
+		if velocity.y > 0:
+			Anim.play("down_walk")
+			Lastdir = Vector2(0,1)
+		elif velocity.y < 0:
+			Anim.play("up_walk")
+			Lastdir = Vector2(0,-1)
+	else:
+		if Lastdir.x != 0:
+			Anim.play("right_idle")
+		if Lastdir == Vector2(0,1):
+			Anim.play("down_idle")
+		if Lastdir == Vector2(0,-1):
+			Anim.play("up_idle")
+
+func Damage(amt):
+	get_parent().Damage(amt)
