@@ -1,0 +1,90 @@
+[gd_scene load_steps=5 format=3 uid="uid://bklg3v4f38p3v"]
+
+[ext_resource type="Script" uid="uid://c51gxlo0b1mx1" path="res://Scripts/Globals/Menu.gd" id="1_xhh6f"]
+[ext_resource type="FontFile" uid="uid://cwn7qx4u76m25" path="res://Sprite/UI/PixeloidMono-nAOpP.ttf" id="2_cayip"]
+
+[sub_resource type="Gradient" id="Gradient_xhh6f"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_cayip"]
+gradient = SubResource("Gradient_xhh6f")
+fill_from = Vector2(1, 0)
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xhh6f")
+
+[node name="Main Menu" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Title" type="Label" parent="Main Menu"]
+layout_mode = 0
+offset_left = 584.0
+offset_top = 64.0
+offset_right = 1340.0
+offset_bottom = 186.0
+theme_override_fonts/font = ExtResource("2_cayip")
+theme_override_font_sizes/font_size = 63
+text = "HearthBound Hollow"
+
+[node name="Start" type="Button" parent="Main Menu"]
+layout_mode = 0
+offset_left = 680.0
+offset_top = 448.0
+offset_right = 1248.0
+offset_bottom = 582.0
+theme_override_fonts/font = ExtResource("2_cayip")
+theme_override_font_sizes/font_size = 63
+text = "Start"
+
+[node name="Settings" type="Button" parent="Main Menu"]
+layout_mode = 0
+offset_left = 680.0
+offset_top = 640.0
+offset_right = 1248.0
+offset_bottom = 774.0
+theme_override_fonts/font = ExtResource("2_cayip")
+theme_override_font_sizes/font_size = 63
+text = "Settings"
+
+[node name="Quit" type="Button" parent="Main Menu"]
+layout_mode = 0
+offset_left = 680.0
+offset_top = 832.0
+offset_right = 1248.0
+offset_bottom = 966.0
+theme_override_fonts/font = ExtResource("2_cayip")
+theme_override_font_sizes/font_size = 63
+text = "Quit"
+
+[node name="Settings" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Back" type="Button" parent="Settings"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 920.0
+offset_right = 144.0
+offset_bottom = 961.0
+theme_override_fonts/font = ExtResource("2_cayip")
+theme_override_font_sizes/font_size = 36
+text = "Back"
+
+[node name="Between" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(960, 540)
+scale = Vector2(29.999998, 16.875)
+texture = SubResource("GradientTexture2D_cayip")
+
+[connection signal="pressed" from="Main Menu/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Main Menu/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Main Menu/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Settings/Back" to="." method="_on_back_pressed"]

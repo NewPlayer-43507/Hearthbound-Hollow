@@ -47,10 +47,13 @@ func _ready() -> void:
 	$Camera2D/Health/Normal/TextureProgressBar.value = health
 
 func _input(_event: InputEvent) -> void:
-# Set HealthBars
+# Set UI
 	$Camera2D/Health/Normal/Sprite2D.scale.x = 1
 	for i in max_health:
 		$Camera2D/Health/Normal/Sprite2D.scale.x -= 0.05
+	if CurrentPickup == null:
+		$Camera2D/ItemUI/Pickup/Name.text = ""
+		$Camera2D/ItemUI/Pickup/Description.text = ""
 # Attacking
 	var projvelocity:Vector2
 	if Input.is_action_pressed("AttackDown"):
@@ -86,7 +89,9 @@ func _input(_event: InputEvent) -> void:
 func Damage(amt):
 	health -= amt
 	if health <= 0:
-		get_tree().quit()
+		$Camera2D/Death/Quote.text = Char.Quotes.pick_random()
+		$Camera2D/Death.show()
+		process_mode = Node.PROCESS_MODE_DISABLED
 	$Camera2D/Health/Normal/TextureProgressBar.value = health
 
 ## Switches AbleToAttack to true
@@ -130,5 +135,3 @@ func _on_item_pickup_area_area_entered(area: Area2D) -> void:
 func _on_item_pickup_area_area_exited(area: Area2D) -> void:
 	if area.is_in_group("ItemPickup"):
 		CurrentPickup = null
-		$Camera2D/ItemUI/Pickup/Name.text = ""
-		$Camera2D/ItemUI/Pickup/Description.text = ""

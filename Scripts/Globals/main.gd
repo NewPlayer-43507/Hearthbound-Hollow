@@ -14,6 +14,7 @@ var roomgrid:Dictionary[Vector2i, int] = {}
 var lastcords:Vector2i = Vector2i(0,0)
 var roomamt:int = 8
 var RoomPickups:Dictionary[Vector2i, Dictionary] = {}
+var DoorsLocked:bool = false
 
 func _ready() -> void:
 	RoomGridCreation()
@@ -56,6 +57,9 @@ func RoomCheck(cords):
 		lastcords = cords
 
 func RoomSetup(Direction:Vector2i, Player:CharacterBody2D = null):
+# Check if can change room
+	if DoorsLocked:
+		return
 # Save Pickups
 	if not RoomPickups.has(currentroom):
 		RoomPickups.get_or_add(currentroom, {})

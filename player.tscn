@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://dp85235hs8ukt"]
+[gd_scene load_steps=38 format=3 uid="uid://dp85235hs8ukt"]
 
 [ext_resource type="Script" uid="uid://b8dx7itbld74h" path="res://Scripts/Player/player.gd" id="1_4flbx"]
 [ext_resource type="Script" uid="uid://dp0igmuucmamn" path="res://Scripts/Player/Playerbody.gd" id="2_i3pqv"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://ddcsqgx4nuu5" path="res://Sprite/UI/Health/HealthUnder.png" id="6_b26j0"]
 [ext_resource type="Texture2D" uid="uid://uw5fjfk14sv6" path="res://Sprite/UI/Health/HealthProgress.png" id="7_n7ghd"]
 [ext_resource type="Texture2D" uid="uid://l08v0n51vqhd" path="res://Sprite/UI/Health/HealthCover.png" id="8_nvl01"]
+[ext_resource type="Script" uid="uid://ccrrolype2bhq" path="res://Scripts/Player/return_to_menu.gd" id="9_n7ghd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_onrkg"]
 size = Vector2(12, 16)
@@ -300,8 +301,39 @@ texture = ExtResource("8_nvl01")
 centered = false
 offset = Vector2(-80, 0)
 
+[node name="Death" type="Control" parent="Camera2D"]
+process_mode = 3
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Quote" type="Label" parent="Camera2D/Death"]
+layout_mode = 0
+offset_left = -238.0
+offset_top = -114.0
+offset_right = 239.0
+offset_bottom = -26.0
+theme_override_fonts/font = ExtResource("5_2hs0m")
+theme_override_font_sizes/font_size = 18
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Return To Menu" type="Button" parent="Camera2D/Death"]
+layout_mode = 0
+offset_left = -53.0
+offset_top = 89.0
+offset_right = 53.0
+offset_bottom = 120.0
+theme_override_fonts/font = ExtResource("5_2hs0m")
+theme_override_font_sizes/font_size = 18
+text = "Return"
+script = ExtResource("9_n7ghd")
+
 [node name="PassiveItemScripts" type="Node" parent="."]
 script = ExtResource("5_sweqy")
 
 [connection signal="area_entered" from="Body/ItemPickupArea" to="." method="_on_item_pickup_area_area_entered"]
 [connection signal="area_exited" from="Body/ItemPickupArea" to="." method="_on_item_pickup_area_area_exited"]
+[connection signal="pressed" from="Camera2D/Death/Return To Menu" to="Camera2D/Death/Return To Menu" method="_on_pressed"]

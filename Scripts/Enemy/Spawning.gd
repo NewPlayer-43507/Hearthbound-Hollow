@@ -6,6 +6,7 @@ var EnemyResources:Array = ["res://Resources/Enemies/Normal/Runner.tres"]
 var enemyamt = 8
 
 func Spawn(Spawnpoints:Array[Vector2]):
+	$"..".DoorsLocked = true
 	for i in enemyamt:
 		var e = EnemyNode.instantiate()
 		e.EnemyRes = load(EnemyResources.pick_random())
@@ -17,4 +18,4 @@ func Spawn(Spawnpoints:Array[Vector2]):
 
 func ChildDeath():
 	if get_child_count() <= 1:
-		pass
+		$"..".DoorsLocked = false
