@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="SingleUse" load_steps=3 format=3 uid="uid://dhbyo6pn1md66"]
+
+[ext_resource type="Script" uid="uid://d0qhl4sc7qeg" path="res://Resources/SingleUse/Singleuse.gd" id="1_ke6n4"]
+[ext_resource type="Texture2D" uid="uid://b8sago6x6ceba" path="res://Sprite/Items/SingleUse/SingleHeart.png" id="1_mjo5o"]
+
+[resource]
+script = ExtResource("1_ke6n4")
+Name = "Red Heart"
+Description = "A single red heart"
+Sprite = ExtResource("1_mjo5o")
+Health = 2
+metadata/_custom_type_script = "uid://d0qhl4sc7qeg"

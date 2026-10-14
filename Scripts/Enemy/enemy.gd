@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var EnemyRes:Enemy = load("res://Resources/Enemies/Runner.tres")
+var EnemyRes:Enemy
 
 @onready var Anim = $AnimatedSprite2D
 
@@ -8,7 +8,7 @@ var CurrentPlayer
 var Lastdir:Vector2 = Vector2(1,0)
 
 var health:int = 1
-
+signal Death
 
 func _ready() -> void:
 	Anim.sprite_frames = EnemyRes.SpriteSheet
@@ -54,6 +54,7 @@ func _physics_process(delta: float) -> void:
 func Damage(amt):
 	health -= amt
 	if health <= 0:
+		Death.emit()
 		queue_free()
 
 

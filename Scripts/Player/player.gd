@@ -106,6 +106,17 @@ func AddPassiveItem(PItem):
 		$PassiveItemScripts.AddScript(PItem)
 	PassiveItemInventory.append(PItem)
 
+func AddSingleItem(SItem):
+	health += SItem.Health
+	$Camera2D/Health/Normal/TextureProgressBar.value = health
+	Speed += SItem.Speed
+	ResistanceToKnockback += SItem.ResistToKnockback
+	Strength += SItem.Strength
+	ProjectileSpeed += SItem.ProjectileSpeed
+	damage += SItem.Damage
+	MaxDamage += SItem.Damage
+	CooldownTime += SItem.AttackCooldownTime
+
 func AddActiveItem(_aItem):
 	pass
 

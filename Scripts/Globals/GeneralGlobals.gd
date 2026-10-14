@@ -2,5 +2,5 @@ extends Node
 
 var Players:Array = []
 
-func RoomChanged():
-	pass
+@warning_ignore("unused_signal")
+signal RoomChanged(Opened)

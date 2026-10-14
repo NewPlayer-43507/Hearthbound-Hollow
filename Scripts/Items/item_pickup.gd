@@ -3,24 +3,22 @@ extends Area2D
 var Name:String
 var Description:String
 
-@export var IsPassiveItem:bool = false
-@export var PItem:PassiveItem
-@export var IsActiveItem:bool = false
-@export var AItem:ActiveItem
+@export var Item:Resource = null
+
+var pos
 
 func _ready() -> void:
-	if IsPassiveItem:
-		Name = PItem.Name
-		Description = PItem.Description
-		$Sprite2D.texture = PItem.Sprite
-	if IsActiveItem:
-		Name = AItem.Name
-		Name = AItem.Description
-		$Sprite2D.texture = AItem.Sprite
+
+	Name = Item.Name
+	Description = Item.Description
+	$Sprite2D.texture = Item.Sprite
+
 
 func Collect(body):
-	if IsPassiveItem:
-		body.AddPassiveItem(PItem)
-	if IsActiveItem:
-		body.AddActiveItem(AItem)
+	if Item is PassiveItem:
+		body.AddPassiveItem(Item)
+	if Item is ActiveItem:
+		body.AddActiveItem(Item)
+	if Item is SingleUse:
+		body.AddSingleItem(Item)
 	queue_free()
