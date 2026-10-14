@@ -4,7 +4,10 @@ extends CharacterBody2D
 
 var Lastdir:Vector2 = Vector2(1,0)
 
-func Animate():
+func _physics_process(delta: float) -> void:
+# Movement
+	velocity = Vector2(Input.get_axis("Left","Right"), Input.get_axis("Up", "Down"))
+	velocity = velocity.normalized() * delta * 580 * get_parent().Speed
 	move_and_slide()
 
 	if velocity.x != 0:

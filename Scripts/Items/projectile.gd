@@ -31,7 +31,7 @@ func _on_body_entered(body: Node2D) -> void:
 	queue_free()
 
 func Erase():
-	for i in 20:
-		scale *= 0.96
+	for i in 10:
+		scale *= 0.9
 		await get_tree().process_frame
 	queue_free()

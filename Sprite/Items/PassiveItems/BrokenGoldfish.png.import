@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dfq76xjbdo21h"
-path="res://.godot/imported/HalfHeart.png-eb2b609ef3bdd0f16b5e0cffd9156fa0.ctex"
+uid="uid://ck6hyxcagdevw"
+path="res://.godot/imported/BrokenGoldfish.png-0f69957419e977422bb7fdea4384ac75.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprite/UI/Health/HalfHeart.png"
-dest_files=["res://.godot/imported/HalfHeart.png-eb2b609ef3bdd0f16b5e0cffd9156fa0.ctex"]
+source_file="res://Sprite/Items/PassiveItems/BrokenGoldfish.png"
+dest_files=["res://.godot/imported/BrokenGoldfish.png-0f69957419e977422bb7fdea4384ac75.ctex"]
 
 [params]
 

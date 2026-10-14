@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bhsdvpnump7ei"
-path="res://.godot/imported/FullSoulHeart.png-22dda048c7c5fd5bc2f203cae8f7b3b0.ctex"
+uid="uid://l08v0n51vqhd"
+path="res://.godot/imported/HealthCover.png-ea027dda7d72b8619b316bef417e32ba.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprite/UI/Health/FullSoulHeart.png"
-dest_files=["res://.godot/imported/FullSoulHeart.png-22dda048c7c5fd5bc2f203cae8f7b3b0.ctex"]
+source_file="res://Sprite/UI/Health/HealthCover.png"
+dest_files=["res://.godot/imported/HealthCover.png-ea027dda7d72b8619b316bef417e32ba.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b26od6y2dyq12"
-path="res://.godot/imported/HalfSoulHeart.png-1f4772cd6c1829d0eabff4afd8b00edf.ctex"
+uid="uid://uw5fjfk14sv6"
+path="res://.godot/imported/HealthProgress.png-bc5cdfee290d02b59330c046fc1a65fc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprite/UI/Health/HalfSoulHeart.png"
-dest_files=["res://.godot/imported/HalfSoulHeart.png-1f4772cd6c1829d0eabff4afd8b00edf.ctex"]
+source_file="res://Sprite/UI/Health/HealthProgress.png"
+dest_files=["res://.godot/imported/HealthProgress.png-bc5cdfee290d02b59330c046fc1a65fc.ctex"]
 
 [params]
 

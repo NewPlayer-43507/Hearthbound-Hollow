@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="Character" load_steps=2 format=3 uid="uid://b5slp61f387gg"]
+[gd_resource type="Resource" script_class="Character" load_steps=3 format=3 uid="uid://b5slp61f387gg"]
 
 [ext_resource type="Script" uid="uid://q7e4lhvfpbb1" path="res://Resources/Characters/CharacterResource.gd" id="1_6l0ko"]
+[ext_resource type="Resource" uid="uid://dofd8wbtxrjqb" path="res://Resources/ActiveItems/Drumsticks.tres" id="1_h5bbw"]
 
 [resource]
 script = ExtResource("1_6l0ko")
@@ -8,8 +9,9 @@ Name = "Jacob O'Brien"
 Alias = "JT"
 Age = 16
 Description = "JT mostly lives for band and... yeah. Weaker character with no real benefit. Uses Drumstick or a wrench."
-Health = 2
+Health = 6
 ResistToKnockback = 1
+MainWeapon = ExtResource("1_h5bbw")
 Strength = 5
 ProjSpeed = 1.1
 Quotes = Array[String](["SCOREBOARD", "FRICK YOU", "Huh", "HI BRENDAN", "SHUT UPPPPPPPP", "aww man", "HAHA", "ummmmmmmm"])
