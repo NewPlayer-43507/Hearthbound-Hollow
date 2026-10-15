@@ -21,4 +21,4 @@ class_name Character
 
 @export_category("Sprites")
 @export var Sprite:CompressedTexture2D
-@export var Spritesheet:CompressedTexture2D
+@export var Spritesheet:SpriteFrames

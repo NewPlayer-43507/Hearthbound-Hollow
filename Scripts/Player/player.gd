@@ -1,8 +1,6 @@
 extends Node2D
 
 #ONREADY VARIABLES
-@onready var Char:Character = load("res://Resources/Characters/Main/JT.tres")
-@onready var AItem:ActiveItem = load("res://Resources/ActiveItems/Drumsticks.tres")
 @onready var Body = $Body
 
 #PROJECTILES
@@ -13,10 +11,12 @@ var AbleToAttack:bool = true
 var health:int
 
 #ITEMS
+var AItem:ActiveItem
 var CurrentPickup:Area2D = null
 var PassiveItemInventory:Array[PassiveItem] = []
 
 #CHARACTER STATS
+var Char:Character
 var max_health:int
 var Speed:float
 var CooldownTime:float = 0.5
@@ -31,6 +31,7 @@ var TimeCharging:float
 var MaxDamage:int
 
 func _ready() -> void:
+	$Body/PlayerSprite.sprite_frames = Char.Spritesheet
 	AItem = Char.MainWeapon
 	max_health = Char.Health
 	Speed = Char.Speed

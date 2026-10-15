@@ -14,7 +14,7 @@ func Spawn(Spawnpoints:Array[Vector2]):
 		Spawnpoints.erase(SpawnPosition)
 		e.global_position = SpawnPosition
 		e.connect("Death", ChildDeath)
-		add_child(e)
+		call_deferred("add_child", e)
 
 func ChildDeath():
 	if get_child_count() <= 1:

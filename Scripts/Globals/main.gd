@@ -7,6 +7,7 @@ extends Node2D
 @onready var RightArea:Area2D = $Room/Right
 
 var Pickup = preload("res://Scenes/item_pickup.tscn")
+var PlayerResource = preload("res://player.tscn")
 
 var EnteredRooms:Array[Vector2i] = []
 var currentroom:Vector2i = Vector2i(0,0)
@@ -17,6 +18,13 @@ var RoomPickups:Dictionary[Vector2i, Dictionary] = {}
 var DoorsLocked:bool = false
 
 func _ready() -> void:
+	var Lastpos = Vector2(216, 136)
+	for i in GeneralGlobals.Characters:
+		var P = PlayerResource.instantiate()
+		P.Char = i
+		P.global_position = Lastpos
+		Lastpos += Vector2(20,0)
+		add_child(P)
 	RoomGridCreation()
 
 func RoomGridCreation():

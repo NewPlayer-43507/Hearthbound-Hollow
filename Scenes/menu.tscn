@@ -19,6 +19,7 @@ grow_vertical = 2
 script = ExtResource("1_xhh6f")
 
 [node name="Main Menu" type="Control" parent="."]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -64,6 +65,7 @@ theme_override_font_sizes/font_size = 63
 text = "Quit"
 
 [node name="Settings" type="Control" parent="."]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -78,6 +80,29 @@ theme_override_fonts/font = ExtResource("2_cayip")
 theme_override_font_sizes/font_size = 36
 text = "Back"
 
+[node name="CharacterSelect" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 1040.0
+offset_bottom = 248.0
+
+[node name="Players" type="HBoxContainer" parent="CharacterSelect"]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 122.0
+offset_right = 1792.0
+offset_bottom = 634.0
+metadata/Res = null
+
+[node name="Start" type="Button" parent="CharacterSelect"]
+layout_mode = 0
+offset_left = 1288.0
+offset_top = 896.0
+offset_right = 1856.0
+offset_bottom = 1030.0
+theme_override_fonts/font = ExtResource("2_cayip")
+theme_override_font_sizes/font_size = 63
+text = "Start"
+
 [node name="Between" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0)
 position = Vector2(960, 540)
@@ -88,3 +113,4 @@ texture = SubResource("GradientTexture2D_cayip")
 [connection signal="pressed" from="Main Menu/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="Main Menu/Quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="Settings/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="CharacterSelect/Start" to="." method="_on_charcter_start_pressed"]
