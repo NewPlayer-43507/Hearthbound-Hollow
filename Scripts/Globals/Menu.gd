@@ -19,7 +19,7 @@ func _ready() -> void:
 				var P = PlayerScenes.instantiate()
 				P.pressed.connect(Selection.bind(res))
 				P.icon = res.Sprite
-				P.text = res.Name
+				P.text = res.Alias
 				$CharacterSelect/Players.add_child(P)
 
 func Selection(Res):
@@ -61,3 +61,8 @@ func _on_quit_pressed() -> void:
 
 func _on_charcter_start_pressed() -> void:
 	Start()
+
+
+func _on_character_back_pressed() -> void:
+	Main.show()
+	$CharacterSelect.hide()

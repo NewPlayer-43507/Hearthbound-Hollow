@@ -5,6 +5,7 @@ class_name ActiveItem
 @export var Name:String = "NA"
 @export var Description:String = "NA"
 @export var Damage:int = 1
+@export var ProjectileSpeed:float = 1.4
 
 @export_category("Charge")
 @export var Chargable:bool = false

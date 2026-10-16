@@ -9,3 +9,6 @@ class_name Enemy
 
 @export_category("Sprite")
 @export var SpriteSheet:SpriteFrames
+
+@export_category("Script")
+@export var CustomScript:GDScript

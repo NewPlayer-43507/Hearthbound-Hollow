@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="PassiveItem" load_steps=3 format=3 uid="uid://cpy714i12e1ux"]
 
 [ext_resource type="Texture2D" uid="uid://ck6hyxcagdevw" path="res://Sprite/Items/PassiveItems/BrokenGoldfish.png" id="1_plbgb"]
-[ext_resource type="Script" uid="uid://b4b23sbr5gsok" path="res://Resources/PassiveItems/PassiveItem.gd" id="1_s7wvh"]
+[ext_resource type="Script" uid="uid://b4b23sbr5gsok" path="res://Scripts/PassiveItem.gd" id="1_s7wvh"]
 
 [resource]
 script = ExtResource("1_s7wvh")

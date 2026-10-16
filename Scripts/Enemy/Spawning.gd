@@ -10,6 +10,7 @@ func Spawn(Spawnpoints:Array[Vector2]):
 	for i in enemyamt:
 		var e = EnemyNode.instantiate()
 		e.EnemyRes = load(EnemyResources.pick_random())
+		e.set_script(e.EnemyRes.CustomScript)
 		var SpawnPosition = Spawnpoints.pick_random()
 		Spawnpoints.erase(SpawnPosition)
 		e.global_position = SpawnPosition
