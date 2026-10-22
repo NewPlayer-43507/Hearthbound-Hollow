@@ -8,6 +8,7 @@ var PlayerScenes = preload("res://Scenes/player_button.tscn")
 var CurrentSelections:Dictionary[int, Character] = {}
 
 func _ready() -> void:
+	GeneralGlobals.Characters.clear()
 	var dir := DirAccess.open("res://Resources/Characters/Main/")
 	if dir:
 		for file_name in dir.get_files():

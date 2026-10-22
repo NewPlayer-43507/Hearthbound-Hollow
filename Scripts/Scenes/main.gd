@@ -61,7 +61,7 @@ func RoomCheck(cords):
 		if roomgrid.size() == roomamt:
 			roomgrid.set(cords, 1)
 		else:
-			roomgrid.set(cords, randi_range(0,1))
+			roomgrid.set(cords, randi_range(2,2))
 		lastcords = cords
 
 func RoomSetup(Direction:Vector2i, Player:CharacterBody2D = null):
@@ -159,6 +159,15 @@ func RoomSetup(Direction:Vector2i, Player:CharacterBody2D = null):
 	else:
 		RightArea.set_deferred("monitoring", false)
 		Tileset.set_cell(RightDoorPosition, 0, Vector2i(11,2))
+
+#Spawn Object
+	for i in Tileset.get_used_cells():
+		var data = Tileset.get_cell_tile_data(i)
+		data = data.get_custom_data("Special")
+		if data != null:
+			var o = data.instantiate()
+			o.global_position = Tileset.map_to_local(i)
+			$Room/Objects.call_deferred("add_child", o)
 
 # Item Pickups
 	if not RoomPickups.has(currentroom):

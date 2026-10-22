@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bklg3v4f38p3v"]
 
-[ext_resource type="Script" uid="uid://c51gxlo0b1mx1" path="res://Scripts/Globals/Menu.gd" id="1_xhh6f"]
+[ext_resource type="Script" uid="uid://c51gxlo0b1mx1" path="res://Scripts/Scenes/Menu.gd" id="1_xhh6f"]
 [ext_resource type="FontFile" uid="uid://cwn7qx4u76m25" path="res://Sprite/UI/PixeloidMono-nAOpP.ttf" id="2_cayip"]
 
 [sub_resource type="Gradient" id="Gradient_xhh6f"]

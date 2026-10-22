@@ -7,13 +7,9 @@ var EnemyRes:Enemy
 var CurrentPlayer
 var Lastdir:Vector2 = Vector2(1,0)
 
-#REQUIRED
-var health:int = 1
-signal Death
 
 func _ready() -> void:
 	Anim.sprite_frames = EnemyRes.SpriteSheet
-	health = EnemyRes.Health
 	$Hitbox.body_entered.connect(_on_hitbox_body_entered)
 
 func _physics_process(delta: float) -> void:
@@ -54,14 +50,11 @@ func _physics_process(delta: float) -> void:
 		if Lastdir == Vector2(0,-1):
 			Anim.play("up_idle")
 
-# REQUIRED
-func Damage(amt):
-	health -= amt
-	if health <= 0:
-		Death.emit()
-		queue_free()
-
-
 func _on_hitbox_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):
 		body.Damage(EnemyRes.Damage)
+
+func GiveEffect(effect:Effect):
+	var e = Node.new()
+	e.set_script(effect.RunScript)
+	$Effects.call_deferred("add_child", e)

@@ -9,6 +9,7 @@ var AbleToAttack:bool = true
 
 #HEALTH
 var health:int
+var Hurtable = true
 
 #ITEMS
 var AItem:ActiveItem
@@ -23,6 +24,7 @@ var CooldownTime:float = 0.5
 var ResistanceToKnockback:int
 var Strength:int
 var ProjectileSpeed:float
+var IncvicibleTime:float = 0.2
 
 #WEAPON STATS
 var damage:int
@@ -88,12 +90,17 @@ func _input(_event: InputEvent) -> void:
 
 ## For Normal Hearts
 func Damage(amt):
+	if Hurtable == false:
+		return
 	health -= amt
 	if health <= 0:
 		$Camera2D/Death/Quote.text = Char.Quotes.pick_random()
 		$Camera2D/Death.show()
 		process_mode = Node.PROCESS_MODE_DISABLED
+	Hurtable = false
 	$Camera2D/Health/Normal/TextureProgressBar.value = health
+	await get_tree().create_timer(IncvicibleTime).timeout
+	Hurtable = true
 
 ## Switches AbleToAttack to true
 func AllowShooting():
@@ -131,7 +138,7 @@ func _on_item_pickup_area_area_entered(area: Area2D) -> void:
 		CurrentPickup = area
 		$Camera2D/ItemUI/Pickup/Name.text = area.Name
 		$Camera2D/ItemUI/Pickup/Description.text = area.Description
-		
+
 
 func _on_item_pickup_area_area_exited(area: Area2D) -> void:
 	if area.is_in_group("ItemPickup"):

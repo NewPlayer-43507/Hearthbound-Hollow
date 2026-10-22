@@ -1,8 +1,9 @@
-[gd_resource type="Resource" script_class="Character" load_steps=4 format=3 uid="uid://b807cd1hxajfg"]
+[gd_resource type="Resource" script_class="Character" load_steps=5 format=3 uid="uid://b807cd1hxajfg"]
 
+[ext_resource type="Resource" uid="uid://db22uqrx3nryd" path="res://Resources/PedastolItems/ActiveItems/BassMallets.tres" id="1_3504u"]
 [ext_resource type="Texture2D" uid="uid://f08t34gg4vh3" path="res://Sprite/CharacterTemplate/Template-Sprite.png" id="1_itlpw"]
 [ext_resource type="SpriteFrames" uid="uid://c51ei81sgxdu6" path="res://Sprite/CharacterTemplate/Template-SpriteSheet.tres" id="2_3504u"]
-[ext_resource type="Script" uid="uid://q7e4lhvfpbb1" path="res://Scripts/CharacterResource.gd" id="3_mvrlp"]
+[ext_resource type="Script" uid="uid://q7e4lhvfpbb1" path="res://Scripts/Resources/CharacterResource.gd" id="3_mvrlp"]
 
 [resource]
 script = ExtResource("3_mvrlp")
@@ -11,6 +12,7 @@ Alias = "Frenchman"
 Age = 16
 Description = "A man who has very good ideals, loves to bake, and band. Also Called MCM(Main Character Mason), we love him(shakes head side to side)"
 ResistToKnockback = 3
+MainWeapon = ExtResource("1_3504u")
 Strength = 6
 ProjSpeed = 1.2
 Quotes = Array[String](["Damnit…", "...Pax…Aeterna…"])

@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="ActiveItem" load_steps=3 format=3 uid="uid://dofd8wbtxrjqb"]
 
 [ext_resource type="Texture2D" uid="uid://crj75qkj4dn4k" path="res://Sprite/Projectiles/Drumstick.png" id="1_loaa3"]
-[ext_resource type="Script" uid="uid://d8qtxcusuxhy" path="res://Scripts/ActiveItems.gd" id="1_ws6dr"]
+[ext_resource type="Script" uid="uid://d8qtxcusuxhy" path="res://Scripts/Resources/ActiveItems.gd" id="1_ws6dr"]
 
 [resource]
 script = ExtResource("1_ws6dr")

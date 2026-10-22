@@ -13,9 +13,8 @@ class_name ActiveItem
 @export var MaxDamage:int = 0
 
 @export_category("Specials")
-@export var Chance:int = 100
-## 1 = stunned, 2 = Concussed, 3 = Bleeding, 4 = Flamed
-@export var Effect:int = 0
+@export var Chance:int = 0
+@export var effect:Effect
 @export var SecondaryDamage:int = 0
 
 @export_category("Sprites")

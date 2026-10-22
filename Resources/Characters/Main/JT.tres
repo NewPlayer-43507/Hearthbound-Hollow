@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="Character" load_steps=5 format=3 uid="uid://b5slp61f387gg"]
 
-[ext_resource type="Resource" uid="uid://dofd8wbtxrjqb" path="res://Resources/ActiveItems/Drumsticks.tres" id="1_h5bbw"]
+[ext_resource type="Resource" uid="uid://dofd8wbtxrjqb" path="res://Resources/PedastolItems/ActiveItems/Drumsticks.tres" id="1_h5bbw"]
 [ext_resource type="Texture2D" uid="uid://f08t34gg4vh3" path="res://Sprite/CharacterTemplate/Template-Sprite.png" id="2_lb5qa"]
 [ext_resource type="SpriteFrames" uid="uid://c51ei81sgxdu6" path="res://Sprite/CharacterTemplate/Template-SpriteSheet.tres" id="3_kam44"]
-[ext_resource type="Script" uid="uid://q7e4lhvfpbb1" path="res://Scripts/CharacterResource.gd" id="4_kam44"]
+[ext_resource type="Script" uid="uid://q7e4lhvfpbb1" path="res://Scripts/Resources/CharacterResource.gd" id="4_kam44"]
 
 [resource]
 script = ExtResource("4_kam44")

@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://da2oq7vmjvrkk"]
+
+[ext_resource type="Script" uid="uid://mpsa0mekto8h" path="res://Scripts/Scenes/pedastool.gd" id="1_qtsej"]
+[ext_resource type="Texture2D" uid="uid://ww4e3bb1iqoy" path="res://Sprite/Rooms/FloorObjects/Pedastol.png" id="2_syg2w"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8j8db"]
+radius = 16.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cmp5k"]
+radius = 8.0
+
+[node name="Pedastool" type="Area2D" groups=["ItemPickup"]]
+script = ExtResource("1_qtsej")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 8)
+shape = SubResource("CircleShape2D_8j8db")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(8, 8)
+texture = ExtResource("2_syg2w")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(8, -8)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(8, 8)
+shape = SubResource("CircleShape2D_cmp5k")

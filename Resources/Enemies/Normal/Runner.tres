@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Enemy" load_steps=4 format=3 uid="uid://bjulqkgbxainq"]
 
 [ext_resource type="SpriteFrames" uid="uid://claiuhevsc7cb" path="res://Sprite/Enemy/SpriteFrames/Runner.tres" id="1_ag41c"]
-[ext_resource type="Script" uid="uid://ch8227gk3v0ot" path="res://Scripts/Enemy.gd" id="1_hgmc5"]
+[ext_resource type="Script" uid="uid://ch8227gk3v0ot" path="res://Scripts/Resources/Enemy.gd" id="1_hgmc5"]
 [ext_resource type="Script" uid="uid://b17xt5s3kd3df" path="res://Scripts/Enemy/EnemyTEMPLATE.gd" id="1_tjjvk"]
 
 [resource]

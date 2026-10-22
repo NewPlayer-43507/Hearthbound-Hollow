@@ -35,3 +35,8 @@ func _physics_process(delta: float) -> void:
 
 func Damage(amt):
 	get_parent().Damage(amt)
+
+func GiveEffect(effect:Effect):
+	var e = Node.new()
+	e.set_script(effect.RunScript)
+	$Effects.call_deferred("add_child", e)
