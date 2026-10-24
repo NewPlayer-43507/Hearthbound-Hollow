@@ -13,6 +13,8 @@ func _ready() -> void:
 
 
 func Collect(body):
+	if Item == null:
+		return
 	if Item is PassiveItem:
 		body.AddPassiveItem(Item)
 	if Item is ActiveItem:
@@ -20,4 +22,5 @@ func Collect(body):
 	if Item is SingleUse:
 		body.AddSingleItem(Item)
 	$Sprite2D2.queue_free()
+	Item = null
 	remove_from_group("ItemPickup")

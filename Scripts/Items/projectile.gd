@@ -13,14 +13,14 @@ func _ready() -> void:
 		$Sprite2D.texture = load(Sprite)
 	elif Sprite is CompressedTexture2D:
 		$Sprite2D.texture = Sprite
-	get_tree().create_timer(TimeBeforeFall).timeout.connect(Erase)
+	get_tree().create_timer(TimeBeforeFall * 2).timeout.connect(Erase)
 
 func _physics_process(delta: float) -> void:
 	if velocity == null:
 		queue_free()
 		return
 	rotate(0.1)
-	global_position += velocity * delta * 200
+	global_position += velocity * delta * 350
 
 
 func _on_body_entered(body: Node2D) -> void:

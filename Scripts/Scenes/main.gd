@@ -18,7 +18,7 @@ var RoomPickups:Dictionary[Vector2i, Dictionary] = {}
 var DoorsLocked:bool = false
 
 func _ready() -> void:
-	var Lastpos = Vector2(216, 136)
+	var Lastpos = Vector2(432, 240)
 	for i in GeneralGlobals.Characters:
 		var P = PlayerResource.instantiate()
 		P.Char = i
@@ -41,7 +41,6 @@ func RoomGridCreation():
 		else:
 			cords = Vector2i(lastcords.x + randi_range(-1,1), lastcords.y)
 		RoomCheck(cords)
-	print(roomgrid)
 	RoomSetup(Vector2i(0,0))
 
 func RoomCheck(cords):

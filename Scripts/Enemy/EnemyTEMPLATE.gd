@@ -23,7 +23,7 @@ func _physics_process(delta: float) -> void:
 		return
 	$NavigationAgent2D.target_position = CurrentPlayer.Body.global_position
 	velocity = $NavigationAgent2D.get_next_path_position() - global_position
-	velocity = velocity.normalized() * delta * 580 * EnemyRes.Speed
+	velocity = velocity.normalized() * delta * 1160 * EnemyRes.Speed
 	move_and_slide()
 
 #Animation

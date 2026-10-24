@@ -10,6 +10,7 @@ radius = 16.0
 radius = 8.0
 
 [node name="Pedastool" type="Area2D" groups=["ItemPickup"]]
+y_sort_enabled = true
 script = ExtResource("1_qtsej")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

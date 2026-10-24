@@ -54,7 +54,7 @@ func _input(_event: InputEvent) -> void:
 	$Camera2D/Health/Normal/Sprite2D.scale.x = 1
 	for i in max_health:
 		$Camera2D/Health/Normal/Sprite2D.scale.x -= 0.05
-	if CurrentPickup == null:
+	if CurrentPickup == null or not CurrentPickup.is_in_group("ItemPickup"):
 		$Camera2D/ItemUI/Pickup/Name.text = ""
 		$Camera2D/ItemUI/Pickup/Description.text = ""
 # Attacking

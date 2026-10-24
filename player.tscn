@@ -10,7 +10,7 @@
 [ext_resource type="Script" uid="uid://ccrrolype2bhq" path="res://Scripts/Player/return_to_menu.gd" id="9_n7ghd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_onrkg"]
-size = Vector2(12, 16)
+size = Vector2(12, 13)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sweqy"]
 radius = 9.0
@@ -19,23 +19,26 @@ radius = 9.0
 script = ExtResource("1_4flbx")
 
 [node name="Body" type="CharacterBody2D" parent="." groups=["Player"]]
+y_sort_enabled = true
 collision_layer = 6
 motion_mode = 1
 script = ExtResource("2_i3pqv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Body"]
+position = Vector2(0, -6.5)
 shape = SubResource("RectangleShape2D_onrkg")
 
 [node name="PlayerSprite" type="AnimatedSprite2D" parent="Body"]
+position = Vector2(0, -8)
 
 [node name="ItemPickupArea" type="Area2D" parent="Body"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Body/ItemPickupArea"]
-position = Vector2(0, 4)
+position = Vector2(0, -4)
 shape = SubResource("CircleShape2D_sweqy")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(4, 4)
+zoom = Vector2(2, 2)
 
 [node name="ItemUI" type="Control" parent="Camera2D"]
 layout_mode = 3
@@ -51,19 +54,19 @@ offset_bottom = 40.0
 [node name="Name" type="Label" parent="Camera2D/ItemUI/Pickup"]
 layout_mode = 0
 offset_left = -120.0
-offset_top = -124.0
+offset_top = -260.0
 offset_right = 120.0
-offset_bottom = -102.0
+offset_bottom = -238.0
 theme_override_fonts/font = ExtResource("5_2hs0m")
 theme_override_font_sizes/font_size = 18
 horizontal_alignment = 1
 
 [node name="Description" type="Label" parent="Camera2D/ItemUI/Pickup"]
 layout_mode = 0
-offset_left = -120.0
-offset_top = -101.0
-offset_right = 120.0
-offset_bottom = -71.0
+offset_left = -119.0
+offset_top = -236.0
+offset_right = 121.0
+offset_bottom = -206.0
 theme_override_fonts/font = ExtResource("5_2hs0m")
 theme_override_font_sizes/font_size = 9
 horizontal_alignment = 1
@@ -77,10 +80,10 @@ offset_bottom = 40.0
 
 [node name="Normal" type="Control" parent="Camera2D/Health"]
 anchors_preset = 0
-offset_left = -238.0
-offset_top = -133.0
-offset_right = -148.0
-offset_bottom = -123.0
+offset_left = -469.0
+offset_top = -259.0
+offset_right = -379.0
+offset_bottom = -249.0
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="Camera2D/Health/Normal"]
 layout_mode = 0

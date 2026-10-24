@@ -10,26 +10,29 @@ size = Vector2(12, 16)
 size = Vector2(16, 20)
 
 [node name="Enemy" type="CharacterBody2D" groups=["Enemy"]]
+y_sort_enabled = true
 collision_layer = 2
 collision_mask = 3
 motion_mode = 1
 script = ExtResource("1_hghv2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -8)
 shape = SubResource("RectangleShape2D_mshec")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -8)
 
 [node name="Hitbox" type="Area2D" parent="."]
 collision_layer = 7
 collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(0, -8)
 shape = SubResource("RectangleShape2D_hghv2")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 target_desired_distance = 16.0
-navigation_layers = 1025
 avoidance_enabled = true
 radius = 17.0
 
